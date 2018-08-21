@@ -65,9 +65,9 @@ namespace PdfGen
         }
         private GoogleDrive Auth_Setup()
         {
-            string Clientid = "421275611783-pvhh6v6dcprr2bvi0l7tmj4bco65pkjg.apps.googleusercontent.com";
-            string Clientsecret = "H9eAmEbf7DokYhev6ueDVTGU";
-            CloudRail.AppKey = "5b79db6070a77f7d86d6dca1";
+            string Clientid = "**********************";
+            string Clientsecret = "******************";
+            CloudRail.AppKey = "*********************";
 
             GoogleDrive googleDrive = new GoogleDrive(new LocalReceiver(8082),Clientid,Clientsecret, "http://localhost:8082/auth","Loading");
             string Result = googleDrive.GetUserLogin();
