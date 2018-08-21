@@ -1,0 +1,14 @@
+﻿<Window x:Class="PdfGen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PdfGen"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Generate" HorizontalAlignment="Left" Margin="80,325,0,0" VerticalAlignment="Top" Width="165" Click="Button_Click" Height="65"/>
+        <Button Content="Upload File" HorizontalAlignment="Left" Margin="480,325,0,0" VerticalAlignment="Top" Width="160" Height="70" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>

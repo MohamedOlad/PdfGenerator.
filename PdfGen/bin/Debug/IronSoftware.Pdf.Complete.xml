@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IronSoftware.Pdf.Complete</name>
+    </assembly>
+    <members>
+        <member name="T:IronPdf.PdfCompleteExtensions">
+            <summary>
+            Extension Methods made possible by combining IronOcr and IronPDF together.
+            </summary>
+        </member>
+        <member name="M:IronPdf.PdfCompleteExtensions.PdfOcr(IronPdf.HtmlToPdf,System.String)">
+            <summary>
+            Performs basic , automated OCR on a PDf document, even a raw scan.  Returns barcodes and texts.   
+            <para>Also see <see cref="T:IronOcr.AdvancedOcr"/> for advanced PDF OCR Option.s</para>
+            </summary>
+            <param name="Renderer">The IronPdf.HtmlToPdf renderer.</param>
+            <param name="PdfFileName">File path to a PDF file.</param>
+            <returns>A structured result containing text, images and barcodes</returns>
+        </member>
+        <member name="T:IronSoftware.PdfComplete.PdfComplete">
+            <summary>
+            Licensing and shortcut methods for using the Suite of Iron PDF related packages together.
+            </summary>
+        </member>
+        <member name="T:IronSoftware.PdfComplete.PdfComplete.License">
+            <summary>
+             Allows IronPdf &amp; IronOcr license keys to be applied globally across an entire application or website
+            </summary>
+            
+        </member>
+        <member name="P:IronSoftware.PdfComplete.PdfComplete.License.PdfLicenseKey">
+            <summary>
+             Get Licensed at http://ironpdf.com/license?complete
+             A License key can also be added to Web.Config or App.Config as IronPdf.LicenseKey 
+            </summary>
+            
+        </member>
+        <member name="P:IronSoftware.PdfComplete.PdfComplete.License.PdfLicenseKeyisVaild">
+            <summary>
+            Checks  <see cref="P:IronSoftware.PdfComplete.PdfComplete.License.PdfLicenseKey"/>.
+            </summary>
+        </member>
+        <member name="P:IronSoftware.PdfComplete.PdfComplete.License.OcrLicenseKey">
+            <summary>
+             Get Licensed at http://iron.com/license?complete or file:///Users/jacob/Sites/ironsoftware.com/csharp/ocr/licensing/index.html
+             A License key can also be added to Web.Config or App.Config as IronOcr.LicenseKey
+            </summary>
+            
+        </member>
+        <member name="P:IronSoftware.PdfComplete.PdfComplete.License.OcrLicenseKeyIsValid">
+            <summary>
+            Checks  <see cref="P:IronSoftware.PdfComplete.PdfComplete.License.OcrLicenseKey"/>.
+            </summary>
+        </member>
+    </members>
+</doc>
