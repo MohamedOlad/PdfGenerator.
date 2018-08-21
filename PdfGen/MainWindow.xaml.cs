@@ -34,8 +34,8 @@ namespace PdfGen
         private string HtmlFile { get; set;}
         private string GetFileUpload { get; set; }
 
-        private HtmlToPdf Renderer { get; set; }
-        private PdfDocument PdfDocument { get; set; }
+        private HtmlToPdf Renderer
+        private PdfDocument PdfDocument
         private string Output;
         
         public MainWindow()
