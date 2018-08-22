@@ -53,7 +53,6 @@ namespace PdfGen
 
         private void Convert(string file)
         {
-
             file = HtmlFile;
             Renderer = new HtmlToPdf();
             PdfDocument = Renderer.RenderHTMLFileAsPdf(HtmlFile);
@@ -82,11 +81,9 @@ namespace PdfGen
             
             if (Find is true) { GetFileUpload = openFileDialog.FileName;}
             FileStream fileStream = new FileStream(GetFileUpload, FileMode.Open);
-            
             Auth_Setup().Upload(GetFileUpload, fileStream, 1024, false);
-            string UserLogin = Auth_Setup().GetUserLogin();
 
-            return UserLogin;
+            return Auth_Setup().GetUserLogin();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
