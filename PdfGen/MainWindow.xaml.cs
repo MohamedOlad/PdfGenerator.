@@ -82,7 +82,7 @@ namespace PdfGen
             
 
             if (Find is true) { GetFileUpload = openFileDialog.FileName;}
-            FileStream fileStream = new FileStream(GetFileUpload, FileMode.Create);
+            FileStream fileStream = new FileStream(GetFileUpload, FileMode.Open);
 
             Auth_Setup().Upload(GetFileUpload, fileStream, 1024, false);
             string UserLogin = Auth_Setup().GetUserLogin();
