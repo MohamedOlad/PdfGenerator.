@@ -77,7 +77,7 @@ namespace PdfGen
         private string UploadFiles()
         {
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
-            bool Find = (bool)openFileDialog.ShowDialog()
+            bool Find = (bool)openFileDialog.ShowDialog();
             
             if (Find is true) { GetFileUpload = openFileDialog.FileName;}
             FileStream fileStream = new FileStream(GetFileUpload, FileMode.Open);
