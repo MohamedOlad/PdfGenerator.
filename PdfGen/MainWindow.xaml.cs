@@ -82,7 +82,9 @@ namespace PdfGen
             if (Find is true) { GetFileUpload = openFileDialog.FileName;}
             FileStream fileStream = new FileStream(GetFileUpload, FileMode.Open);
             Auth_Setup().Upload("/NewFile.pdf", fileStream, 1024, false);
-
+            
+            if (Auth_Setup().Exists("/NewFile.pdf") is true) { MessageBox.Show("This file already exist and has been replaced!"); }
+            
             return Auth_Setup().GetUserLogin();
         }
 
