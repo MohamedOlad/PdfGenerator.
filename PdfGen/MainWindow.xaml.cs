@@ -34,9 +34,9 @@ namespace PdfGen
         private string HtmlFile { get; set;}
         private string GetFileUpload { get; set; }
 
-        private HtmlToPdf Renderer
+        private HtmlToPdf Renderer 
         private PdfDocument PdfDocument
-        private string Output;
+        private string Output { get; set; }
         
         public MainWindow()
         {
@@ -84,6 +84,8 @@ namespace PdfGen
             Auth_Setup().Upload("/NewFile.pdf", fileStream, 1024, false);
             
             if (Auth_Setup().Exists("/NewFile.pdf") is true) { MessageBox.Show("This file already exist and has been replaced!"); }
+            else { MessageBox.Show("The file has been uploaded successfully!"); }
+
             
             return Auth_Setup().GetUserLogin();
         }
