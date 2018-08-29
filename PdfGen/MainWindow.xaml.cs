@@ -74,11 +74,12 @@ namespace PdfGen
             return googleDrive;
         }
 
-        private string UploadFiles()
+        private string UploadFiles(string FileName_)
         {
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
             bool Find = (bool)openFileDialog.ShowDialog();
-            
+            FileName_ = GetFileUpload;
+
             if (Find is true) { GetFileUpload = openFileDialog.FileName;}
             FileStream fileStream = new FileStream(GetFileUpload, FileMode.Open);
             
