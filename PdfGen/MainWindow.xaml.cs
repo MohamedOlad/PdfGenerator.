@@ -81,13 +81,15 @@ namespace PdfGen
             
             if (Find is true) { GetFileUpload = openFileDialog.FileName;}
             FileStream fileStream = new FileStream(GetFileUpload, FileMode.Open);
-            Auth_Setup().Upload("/NewFile.pdf", fileStream, 1024, false);
             
-            if (Auth_Setup().Exists("/NewFile.pdf") is true) { MessageBox.Show("This file already exist and has been replaced!"); }
-            else { MessageBox.Show("The file has been uploaded successfully!"); }
+             GoogleDrive googleDrive = Auth_Setup();
 
+            if (googleDrive.Exists("/NewFile.pdf") is true) { MessageBox.Show("This file exisit and is going to be replaced!"); }
+            else if (googleDrive.Exists("/NewFile.pdf") is false) { MessageBox.Show("The new file has been created!"); }
+
+            googleDrive.Upload("/NewFile.pdf", fileStream, 1024, true);
             
-            return Auth_Setup().GetUserLogin();
+            return googleDrive.GetUserLogin();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
