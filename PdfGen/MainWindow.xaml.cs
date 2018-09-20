@@ -89,7 +89,7 @@ namespace PdfGen
             return googleDrive;
         }
 
-        private string UploadFiles(string FileName_)
+        private void UploadFiles(string FileName_)
         {
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
             bool Find = (bool)openFileDialog.ShowDialog();
@@ -106,8 +106,22 @@ namespace PdfGen
             googleDrive.Upload("/NewFile.pdf", fileStream, 1024, true);
             Username = googleDrive.GetUserName();
 
+             SpaceAllocation spaceAllocation = googleDrive.GetAllocation();
+
+            string[] Sizes = { "B", "KB", "MB", "GB", "TB" };
+            long UserAllocation = spaceAllocation.GetTotal();
+            int Order = 0;
+
+            while (UserAllocation >= 1024 && Order < Sizes.Length - 1)
+            {
+                Order++;
+                UserAllocation = UserAllocation / 1024;
+            }
+
+            string Result = string.Format("{0:0.##} {1}", UserAllocation, Sizes[Order]);
+            MessageBox.Show("Size available on this account is " + Result);
+
             
-            return googleDrive.GetUserLogin();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
