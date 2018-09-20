@@ -120,8 +120,6 @@ namespace PdfGen
 
             string Result = string.Format("{0:0.##} {1}", UserAllocation, Sizes[Order]);
             MessageBox.Show("Size available on this account is " + Result);
-
-            
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
