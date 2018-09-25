@@ -100,13 +100,16 @@ namespace PdfGen
             
             GoogleDrive googleDrive = Auth_Setup();
 
-            if (googleDrive.Exists("/NewFile.pdf") is true) { MessageBox.Show("This file exisit and is going to be replaced!"); }
-            else if (googleDrive.Exists("/NewFile.pdf") is false) { MessageBox.Show("The new file has been created!"); }
+             if (googleDrive.Exists("/NewFile.pdf") is true) { MessageBox.Show("This file exisit and is going to be replaced!");
+                googleDrive.Upload("/NewFile.pdf", fileStream, 1024, true);
+                Username = googleDrive.GetUserName();
+            }
+            else if (googleDrive.Exists("/NewFile.pdf") is false) { MessageBox.Show("The new file has been created!");
+                googleDrive.Upload("/NewFile.pdf", fileStream, 1024, true);
+                Username = googleDrive.GetUserName();
+            }
 
-            googleDrive.Upload("/NewFile.pdf", fileStream, 1024, true);
-            Username = googleDrive.GetUserName();
-
-             SpaceAllocation spaceAllocation = googleDrive.GetAllocation();
+            SpaceAllocation spaceAllocation = googleDrive.GetAllocation();
 
             string[] Sizes = { "B", "KB", "MB", "GB", "TB" };
             long UserAllocation = spaceAllocation.GetTotal();
