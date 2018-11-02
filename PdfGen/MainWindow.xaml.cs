@@ -72,8 +72,8 @@ namespace PdfGen
         {
             file = HtmlFile;
             Renderer = new HtmlToPdf();
-            Thread.Sleep(5000);
             PdfDocument = Renderer.RenderHTMLFileAsPdf(HtmlFile);
+            Thread.Sleep(5000);
             
             Output = "C:\\Desktop\\Newfile.pdf" + DateTime.Now.Ticks + ".pdf";
             PdfDocument.SaveAs(Output);
