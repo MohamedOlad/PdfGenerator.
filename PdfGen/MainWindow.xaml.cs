@@ -64,12 +64,15 @@ namespace PdfGen
             bool Find = (bool)openFileDialog.ShowDialog();
            
             if(Find is true) { HtmlFile = openFileDialog.FileName; Convert(null); }
+            Thread thread = new Thread(() => Convert(null));
+            thread.Start();
         }
 
         private void Convert(string file)
         {
             file = HtmlFile;
             Renderer = new HtmlToPdf();
+            Thread.Sleep(5000);
             PdfDocument = Renderer.RenderHTMLFileAsPdf(HtmlFile);
             
             Output = "C:\\Desktop\\Newfile.pdf" + DateTime.Now.Ticks + ".pdf";
